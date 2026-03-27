@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Air</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Fresh Air">
+    <span>Fresh Air</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+<a href ="contact.html">
+  <button class="support-btn">Get Support</button></a>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Breathable Comfort for Every Space</h1>
+    <p>Expert HVAC solutions for homes and businesses</p>
+    <a href="services.html"><button class="btn">View Services</button></a>
+  </div>
+</section>
+
+<section class="section">
+  <h1>Our Solutions</h1>
+  <div class="cards">
+    <div class="card"><img src="images/instal.png"><h2> AC Instalation</h2></div>
+    <div class="card"><img src="images/maintainance.png"><h2>Maintenance & AMC </h2></div>
+    <div class="card"><img src="images/VENTILATION.png"><h2>Heating & Ventilation </h2></div>
+  </div>
+</section>
+
+<section class="section why">
+  <img src="images/tech.webp">
+  <div>
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>Certified Experts</li>
+      <li>24/7 Service</li>
+      <li>Transparent Pricing</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Fresh Air (Developed by Keshav Pathak and sajal)</p>
+</footer>
+
+
+<button id="openCalc" class="side-btn">ROI Calculator</button>
+
+<div id="modalOverlay" class="modal-overlay">
+    <div class="calculator-card">
+        <span id="closeCalc" class="close-x">&times;</span>
+        
+        <h2>Energy Savings ROI</h2>
+        <p>Estimate 10-year savings with a high-efficiency HVAC unit.</p>
+        <hr>
+
+        <div class="input-group">
+            <label>Avg. Monthly Bill ($)</label>
+            <input type="number" id="monthlyBill" placeholder="e.g. 2000">
+        </div>
+        
+        <div class="input-group">
+            <label>Age of Current Unit (Years)</label>
+            <input type="number" id="unitAge" placeholder="e.g. 10">
+        </div>
+
+        <div class="input-group">
+            <label>Forecast Period</label>
+            <select id="years">
+                <option value="5">5 Years</option>
+                <option value="10" selected>10 Years</option>
+                <option value="15">15 Years</option>
+            </select>
+        </div>
+        
+        <button id="calcBtn" class="calc-submit">Calculate Savings</button>
+        
+        <div id="resultArea" class="result-container" style="display: none;">
+            <div id="savingsDisplay"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
