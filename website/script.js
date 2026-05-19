@@ -59,35 +59,229 @@ const form = document.getElementById('quoteForm');
 const quoteBtn = document.getElementById('quoteBtn');
 const closeBtn = document.getElementById('closeBtn');
 
-quoteBtn.addEventListener('click', () => {
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+if(modal && overlay && form && quoteBtn && closeBtn){
+
+    quoteBtn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const customerData = {
+            name: document.getElementById('nameInput').value,
+            phone: document.getElementById('phoneInput').value,
+            service: document.getElementById('serviceInput').value,
+            timestamp: new Date().toISOString()
+        };
+
+        let existingLeads = JSON.parse(localStorage.getItem('freshAirLeads')) || [];
+
+        existingLeads.push(customerData);
+
+        localStorage.setItem('freshAirLeads', JSON.stringify(existingLeads));
+
+        alert("Our team will connect within 24 hours");
+
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+
+        form.reset();
+    });
+
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const chatToggle = document.getElementById("chatToggle");
+    const chatPanel = document.getElementById("chatPanel");
+    const closeChat = document.getElementById("closeChat");
+
+    if (!chatToggle || !chatPanel || !closeChat) return;
+
+    chatToggle.addEventListener("click", () => {
+        chatPanel.classList.add("active");
+    });
+
+    closeChat.addEventListener("click", () => {
+        chatPanel.classList.remove("active");
+    });
+
 });
 
-closeBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
+const chatBody = document.getElementById("chatBody");
+const chatInput = document.getElementById("chatInput");
+const sendMessage = document.getElementById("sendMessage");
+
+loadMessages();
+
+function getTime(){
+
+    const now = new Date();
+
+    return now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
+
+function saveMessages(){
+    localStorage.setItem("chatData", chatBody.innerHTML);
+}
+
+function loadMessages(){
+
+    const saved = localStorage.getItem("chatData");
+
+    if(saved){
+        chatBody.innerHTML = saved;
+    }
+}
+
+function addMessage(message, sender){
+
+    const wrapper = document.createElement("div");
+
+    wrapper.classList.add("message-wrapper");
+
+    if(sender === "user"){
+        wrapper.classList.add("user-wrapper");
+    }
+
+    else{
+        wrapper.classList.add("bot-wrapper");
+    }
+
+    const messageDiv = document.createElement("div");
+
+    if(sender === "user"){
+        messageDiv.classList.add("user-message");
+        messageDiv.innerHTML = ` ${message}`;
+    }
+
+    else{
+        messageDiv.classList.add("bot-message");
+        messageDiv.innerHTML = ` ${message}`;
+    }
+
+    const time = document.createElement("span");
+
+    time.classList.add("message-time");
+
+    time.innerText = getTime();
+
+    wrapper.appendChild(messageDiv);
+    wrapper.appendChild(time);
+
+    chatBody.appendChild(wrapper);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    saveMessages();
+}
+
+function showTyping(){
+
+    const typing = document.createElement("div");
+
+    typing.classList.add("typing");
+
+    typing.id = "typing";
+
+    typing.innerHTML = `<span>•••</span>`;
+
+    chatBody.appendChild(typing);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function removeTyping(){
+
+    const typing = document.getElementById("typing");
+
+    if(typing){
+        typing.remove();
+    }
+}
+
+function botReply(userText){
+
+    let response = "Please contact our support team.";
+
+    const text = userText.toLowerCase();
+
+    if(text.includes("repair")){
+        response = "We provide complete AC repair services.";
+    }
+
+    else if(text.includes("price")){
+        response = "Pricing depends on the service type.";
+    }
+
+    else if(text.includes("install")){
+        response = "We offer AC installation for homes and offices.";
+    }
+
+    else if(text.includes("hello") || text.includes("hi")){
+        response = "Hello 👋 How can I help you today?";
+    }
+
+    showTyping();
+
+    setTimeout(() => {
+
+        removeTyping();
+
+        addMessage(response, "bot");
+
+    }, 1000);
+}
+
+function handleMessage(customText = null){
+
+    const text = customText || chatInput.value.trim();
+
+    if(text === "") return;
+
+    addMessage(text, "user");
+
+    botReply(text);
+
+    chatInput.value = "";
+}
+
+sendMessage.addEventListener("click", () => {
+    handleMessage();
 });
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    
-    const customerData = {
-        name: document.getElementById('nameInput').value,
-        phone: document.getElementById('phoneInput').value,
-        service: document.getElementById('serviceInput').value,
-        timestamp: new Date().toISOString()
-    };
-    
-    let existingLeads = JSON.parse(localStorage.getItem('freshAirLeads')) || [];
-    
-    existingLeads.push(customerData);
-    
-    localStorage.setItem('freshAirLeads', JSON.stringify(existingLeads));
-    
-    alert("Our team will connect within 24 hours");
-    
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
-    form.reset();
+chatInput.addEventListener("keypress", (e) => {
+
+    if(e.key === "Enter"){
+        handleMessage();
+    }
+
 });
+
+const quickButtons = document.querySelectorAll(".quick-options button");
+
+quickButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        handleMessage(button.innerText);
+
+    });
+
+});
+
+setTimeout(() => {
+
+    chatPanel.classList.add("active");
+
+}, 3000);

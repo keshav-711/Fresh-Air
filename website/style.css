@@ -392,7 +392,7 @@ max-width: 800px;}
     right: 20px;
     bottom: 20px;
     padding: 15px 25px;
-    background: #28a745;
+    background: linear-gradient(45deg,#0a571c,#00d084);
     color: white;
     border: none;
     border-radius: 50px;
@@ -504,4 +504,241 @@ footer p {
   .contact-right {
     width: 100%;
   }
+}
+
+.chat-toggle-btn{
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    padding: 15px 22px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg,#0a571c,#00d084);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.chat-panel{
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100vh;
+    background: white;
+    z-index: 2000;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s ease;
+}
+
+.chat-panel.active{
+    right: 0;
+}
+
+.chat-header{
+    background: linear-gradient(90deg,#28a745,#00d084);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3{
+    margin: 0;
+    font-size: 20px;
+}
+
+.chat-header h3::after{
+    display: none;
+}
+
+#closeChat{
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.chat-body{
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f5f7fa;
+}
+
+.bot-message{
+    background: white;
+    padding: 14px;
+    border-radius: 12px;
+    width: fit-content;
+    max-width: 85%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.quick-options{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.quick-options button{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: #e8fff2;
+    color: #0a571c;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.quick-options button:hover{
+    background: #28a745;
+    color: white;
+}
+
+.chat-input-area{
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: white;
+}
+
+.chat-input-area input{
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+}
+
+.chat-input-area button{
+    margin-left: 10px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 30px;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+@media(max-width:768px){
+
+    .chat-panel{
+        width: 100%;
+    }
+
+    .chat-toggle-btn{
+        bottom: 80px;
+        right: 15px;
+    }
+
+}
+
+.user-message{
+    background: #28a745;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-bottom: 15px;
+    width: fit-content;
+    max-width: 80%;
+}
+
+.bot-message{
+    background: white;
+    padding: 12px 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    width: fit-content;
+    max-width: 80%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.message-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    animation: fadeIn 0.3s ease;
+}
+
+.message-time{
+    font-size: 11px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.user-wrapper{
+    align-items: flex-end;
+}
+
+.bot-wrapper{
+    align-items: flex-start;
+}
+
+.typing{
+    background: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    width: fit-content;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+}
+
+.typing span{
+    animation: blink 1s infinite;
+    font-size: 20px;
+}
+
+.notification-dot{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 14px;
+    height: 14px;
+    background: red;
+    border-radius: 50%;
+}
+
+.quick-options{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quick-options button{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: #e8fff2;
+    color: #0a571c;
+    cursor: pointer;
+}
+
+.quick-options button:hover{
+    background: #28a745;
+    color: white;
+}
+
+@keyframes blink{
+    0%{opacity:0.2;}
+    50%{opacity:1;}
+    100%{opacity:0.2;}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform: translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
 }
