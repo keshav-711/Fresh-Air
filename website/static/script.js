@@ -117,7 +117,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const chatBody = document.getElementById("chatBody");
 const chatInput = document.getElementById("chatInput");
-const sendMessage = document.getElementById("sendMessage");
+const sendBtn = document.getElementById("sendMessage");
 
 loadMessages();
 
@@ -210,39 +210,6 @@ function removeTyping(){
     }
 }
 
-function botReply(userText){
-
-    let response = "Please contact our support team.";
-
-    const text = userText.toLowerCase();
-
-    if(text.includes("repair")){
-        response = "We provide complete AC repair services.";
-    }
-
-    else if(text.includes("price")){
-        response = "Pricing depends on the service type.";
-    }
-
-    else if(text.includes("install")){
-        response = "We offer AC installation for homes and offices.";
-    }
-
-    else if(text.includes("hello") || text.includes("hi")){
-        response = "Hello 👋 How can I help you today?";
-    }
-
-    showTyping();
-
-    setTimeout(() => {
-
-        removeTyping();
-
-        addMessage(response, "bot");
-
-    }, 1000);
-}
-
 function handleMessage(customText = null){
 
     const text = customText || chatInput.value.trim();
@@ -251,12 +218,12 @@ function handleMessage(customText = null){
 
     addMessage(text, "user");
 
-    botReply(text);
+    sendMessage(text);
 
     chatInput.value = "";
 }
 
-sendMessage.addEventListener("click", () => {
+sendBtn.addEventListener("click", () => {
     handleMessage();
 });
 
@@ -285,3 +252,24 @@ setTimeout(() => {
     chatPanel.classList.add("active");
 
 }, 3000);
+
+async function sendMessage(userText) {
+
+    showTyping();
+
+    const response = await fetch("/predict", {
+        method: "POST",
+        body: JSON.stringify({
+            message: userText
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    const data = await response.json();
+
+    removeTyping();
+
+    addMessage(data.answer, "bot");
+}

@@ -4,25 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services - Fresh Air</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <!-- Navbar -->
 <header class="navbar">
   <div class="logo">
-    <img src="images/logo.png">
+    <img src="{{ url_for('static', filename='images/logo.png') }}">
     <span>Fresh Air</span>
   </div>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+</nav>
 
-  <button class="support-btn">Get Support</button>
+<a href="/contact">
+    <button class="support-btn">Get Support</button>
+</a>
 </header>
 
 <!-- ===== INTRO ===== -->
@@ -40,7 +42,7 @@
   <div class="services-grid">
 
     <div class="service-card">
-      <img src="images/instal.png">
+      <img src="{{ url_for('static', filename='images/instal.png') }}">
       <h3>AC Installation</h3>
       <p>
         We offer professional installation services for all types of air conditioning
@@ -49,7 +51,7 @@
     </div>
 
     <div class="service-card">
-      <img src="images/maintainance.png">
+      <img src="{{ url_for('static', filename='images/maintainance.png') }}">
       <h3>Maintenance</h3>
       <p>
         Regular maintenance helps extend the life of your AC. We provide complete cleaning,
@@ -58,7 +60,7 @@
     </div>
 
     <div class="service-card">
-      <img src="images/VENTILATION.png">
+      <img src="{{ url_for('static', filename='images/VENTILATION.png') }}">
       <h3>Ventilation</h3>
       <p>
         Improve indoor air quality with our advanced ventilation systems that ensure
@@ -215,7 +217,7 @@
   </p>
 
   <div style="text-align:center;">
-    <a href="contact.html">
+    <a href="/contact">
       <button class="btn">Contact Us</button>
     </a>
   </div>

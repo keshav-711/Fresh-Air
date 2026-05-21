@@ -1,0 +1,532 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good evening",
+        "Is anyone there?",
+        "Can someone help me?",
+        "I need HVAC assistance",
+        "Hey there",
+        "Hello HVAC team",
+        "Greetings",
+        "Need help with my AC",
+        "Need help with heating",
+        "Anybody available?",
+        "Hi HVAC support"
+      ],
+      "responses": [
+        "Hello! Welcome to our HVAC support service. How can we help you today?",
+        "Hi there! Need help with your heating or cooling system?",
+        "Welcome! We are here to help with AC, heating, ventilation, and indoor air quality services.",
+        "Hey! Tell us what HVAC issue you are facing today."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Talk to you later",
+        "Catch you later",
+        "I am leaving",
+        "Thanks bye",
+        "Have a good day",
+        "See ya",
+        "That is all"
+      ],
+      "responses": [
+        "Thank you for contacting us. Have a great day!",
+        "Goodbye! Stay comfortable and safe.",
+        "See you again! Contact us anytime for HVAC support.",
+        "Bye! We are always here if you need heating or cooling assistance."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thank you",
+        "Thanks",
+        "Thanks a lot",
+        "Appreciate it",
+        "Thank you so much",
+        "Great thanks",
+        "Helpful thanks",
+        "You helped me",
+        "Thanks for the support"
+      ],
+      "responses": [
+        "You are welcome!",
+        "Happy to help!",
+        "Glad we could assist you.",
+        "Anytime! Let us know if you need more HVAC help."
+      ]
+    },
+    {
+      "tag": "ac_not_cooling",
+      "patterns": [
+        "My AC is not cooling",
+        "Air conditioner blowing warm air",
+        "AC not working properly",
+        "Why is my AC hot?",
+        "Cooling issue in AC",
+        "AC not cold",
+        "Air conditioner not cooling the room",
+        "My house is still hot",
+        "AC runs but does not cool",
+        "AC airflow is warm",
+        "Central AC not cooling",
+        "Split AC not cooling"
+      ],
+      "responses": [
+        "Your AC may have a dirty filter, low refrigerant, frozen coils, or thermostat issues.",
+        "Please check the thermostat setting, air filter, and outdoor unit first.",
+        "Warm airflow may indicate refrigerant leakage or compressor problems.",
+        "We recommend scheduling an HVAC inspection for accurate diagnosis."
+      ]
+    },
+    {
+      "tag": "ac_leaking_water",
+      "patterns": [
+        "My AC is leaking water",
+        "Water dripping from AC",
+        "Split AC leaking",
+        "AC indoor unit leaking",
+        "Why is water coming from my AC?",
+        "Air conditioner leaking water",
+        "Leak from AC pipe",
+        "AC drain clogged",
+        "Water near AC unit"
+      ],
+      "responses": [
+        "A clogged condensate drain line is one of the most common causes of AC water leakage.",
+        "Turn off the AC if water leakage becomes severe to prevent electrical damage.",
+        "Dirty filters or frozen evaporator coils may also cause leaking.",
+        "You may need professional cleaning and maintenance."
+      ]
+    },
+    {
+      "tag": "ac_not_turning_on",
+      "patterns": [
+        "AC not turning on",
+        "Air conditioner will not start",
+        "My AC is dead",
+        "No power in AC",
+        "AC not responding",
+        "Thermostat on but AC not starting",
+        "Outdoor unit not running",
+        "AC suddenly stopped working"
+      ],
+      "responses": [
+        "Please check the thermostat batteries, circuit breaker, and power supply.",
+        "A tripped breaker or blown fuse can prevent the AC from starting.",
+        "If the issue continues, the capacitor or compressor may need inspection.",
+        "We recommend booking a technician visit for diagnosis."
+      ]
+    },
+    {
+      "tag": "heating_not_working",
+      "patterns": [
+        "Heater not working",
+        "Furnace not heating",
+        "No heat in home",
+        "Heating system blowing cold air",
+        "Room not getting warm",
+        "My heater stopped working",
+        "Why is my furnace cold?",
+        "Heating issue"
+      ],
+      "responses": [
+        "Check the thermostat setting and ensure it is set to heat mode.",
+        "Dirty filters or ignition issues can prevent proper heating.",
+        "A furnace may require burner cleaning or professional repair.",
+        "We can help diagnose your heating system issue."
+      ]
+    },
+    {
+      "tag": "strange_noise",
+      "patterns": [
+        "My AC is making noise",
+        "Buzzing sound from HVAC",
+        "Rattling in air conditioner",
+        "Clicking sound from furnace",
+        "Loud HVAC noise",
+        "Squealing sound from AC",
+        "Strange sound from vents",
+        "Outdoor unit noisy"
+      ],
+      "responses": [
+        "Buzzing or rattling sounds may indicate loose parts or electrical issues.",
+        "Squealing noises can be caused by worn belts or motor problems.",
+        "Please turn off the system if the noise becomes very loud.",
+        "A professional inspection is recommended for unusual HVAC sounds."
+      ]
+    },
+    {
+      "tag": "bad_smell",
+      "patterns": [
+        "Bad smell from AC",
+        "Burning smell from heater",
+        "Musty smell in vents",
+        "HVAC smells weird",
+        "Air conditioner smells bad",
+        "Why does my AC smell?",
+        "Furnace burning odor",
+        "Mold smell from HVAC"
+      ],
+      "responses": [
+        "Musty odors may indicate mold or moisture buildup in ducts or filters.",
+        "Burning smells can result from overheating electrical components.",
+        "Please turn off the system if you notice a strong burning smell.",
+        "Cleaning and maintenance may solve odor issues."
+      ]
+    },
+    {
+      "tag": "air_filter",
+      "patterns": [
+        "How often should I change my air filter?",
+        "When to replace HVAC filter",
+        "Dirty air filter",
+        "Air filter maintenance",
+        "How to clean AC filter",
+        "Filter replacement schedule",
+        "Best air filters for HVAC",
+        "Can dirty filters affect cooling?"
+      ],
+      "responses": [
+        "Most HVAC air filters should be replaced every 1 to 3 months.",
+        "Dirty filters reduce airflow and system efficiency.",
+        "Homes with pets or allergies may require more frequent filter changes.",
+        "Regular filter maintenance improves indoor air quality and cooling performance."
+      ]
+    },
+    {
+      "tag": "maintenance_service",
+      "patterns": [
+        "Do you provide maintenance?",
+        "HVAC maintenance service",
+        "Need AC servicing",
+        "Annual maintenance",
+        "Schedule tune up",
+        "Preventive HVAC maintenance",
+        "Air conditioner servicing",
+        "Furnace tune up"
+      ],
+      "responses": [
+        "Yes, we provide complete HVAC maintenance and tune-up services.",
+        "Regular maintenance helps improve efficiency and reduce breakdowns.",
+        "Our maintenance includes filter checks, coil cleaning, refrigerant inspection, and safety testing.",
+        "Would you like to schedule a service appointment?"
+      ]
+    },
+    {
+      "tag": "installation_service",
+      "patterns": [
+        "Do you install AC units?",
+        "Need HVAC installation",
+        "Install new furnace",
+        "AC installation service",
+        "New air conditioner setup",
+        "Central AC installation",
+        "Need ductless mini split installation",
+        "Replace my HVAC system"
+      ],
+      "responses": [
+        "Yes, we provide professional HVAC installation services.",
+        "We install central AC systems, furnaces, heat pumps, and mini-split units.",
+        "Our experts can help you choose an energy-efficient HVAC system for your home.",
+        "Would you like a free installation estimate?"
+      ]
+    },
+    {
+      "tag": "emergency_service",
+      "patterns": [
+        "Do you offer emergency HVAC service?",
+        "Urgent AC repair",
+        "24 hour HVAC service",
+        "Emergency furnace repair",
+        "Need technician immediately",
+        "AC broke at night",
+        "Emergency cooling repair",
+        "Immediate HVAC help"
+      ],
+      "responses": [
+        "Yes, we offer emergency HVAC repair services.",
+        "Our technicians are available for urgent heating and cooling problems.",
+        "Please provide your issue details and location for faster assistance.",
+        "We will connect you with the nearest available technician."
+      ]
+    },
+    {
+      "tag": "energy_efficiency",
+      "patterns": [
+        "How to reduce electricity bill",
+        "Energy efficient HVAC tips",
+        "Why is my AC bill high?",
+        "Save energy with AC",
+        "HVAC efficiency",
+        "Best thermostat setting",
+        "Reduce cooling costs",
+        "How to improve HVAC efficiency"
+      ],
+      "responses": [
+        "Regular maintenance and clean filters help improve HVAC efficiency.",
+        "Using a programmable thermostat can reduce energy consumption.",
+        "Seal air leaks and improve insulation for better cooling performance.",
+        "Upgrading to a high-efficiency HVAC system can lower utility bills."
+      ]
+    },
+    {
+      "tag": "indoor_air_quality",
+      "patterns": [
+        "Indoor air quality issues",
+        "How to improve air quality",
+        "Dust in home",
+        "Air purifier for HVAC",
+        "Allergy problems from AC",
+        "HVAC air purification",
+        "Poor indoor air",
+        "Humidifier installation"
+      ],
+      "responses": [
+        "Indoor air quality can be improved with proper filtration and ventilation.",
+        "Air purifiers and humidifiers help reduce allergens and dust.",
+        "Regular duct cleaning and filter replacement also improve indoor air quality.",
+        "We provide indoor air quality solutions for homes and businesses."
+      ]
+    },
+    {
+      "tag": "duct_cleaning",
+      "patterns": [
+        "Do you clean air ducts?",
+        "Duct cleaning service",
+        "Dirty air ducts",
+        "Need vent cleaning",
+        "Dust coming from vents",
+        "Air duct maintenance",
+        "HVAC duct inspection"
+      ],
+      "responses": [
+        "Yes, we provide professional duct cleaning services.",
+        "Clean air ducts improve airflow and indoor air quality.",
+        "Duct cleaning can help reduce dust, allergens, and odors.",
+        "We recommend periodic inspections for duct systems."
+      ]
+    },
+    {
+      "tag": "thermostat_issue",
+      "patterns": [
+        "Thermostat not working",
+        "Smart thermostat problem",
+        "HVAC thermostat issue",
+        "Thermostat blank screen",
+        "Temperature not accurate",
+        "Thermostat battery issue",
+        "Thermostat not controlling AC"
+      ],
+      "responses": [
+        "Please check the thermostat batteries and settings first.",
+        "Incorrect thermostat calibration can affect HVAC performance.",
+        "Smart thermostats may require software reset or reconnection.",
+        "We can help troubleshoot or replace your thermostat if needed."
+      ]
+    },
+    {
+      "tag": "refrigerant_issue",
+      "patterns": [
+        "Low refrigerant in AC",
+        "AC refrigerant leak",
+        "Need AC gas refill",
+        "Why is AC freezing?",
+        "Cooling weak due to gas",
+        "Refrigerant problem",
+        "Freon leak"
+      ],
+      "responses": [
+        "Low refrigerant levels can reduce cooling efficiency and freeze coils.",
+        "A refrigerant leak should be repaired before refilling the system.",
+        "Only certified HVAC technicians should handle refrigerants.",
+        "We recommend a professional inspection for refrigerant issues."
+      ]
+    },
+    {
+      "tag": "pricing",
+      "patterns": [
+        "How much does HVAC repair cost?",
+        "AC service charges",
+        "Installation pricing",
+        "What are your rates?",
+        "HVAC maintenance cost",
+        "Furnace repair price",
+        "Get a quote",
+        "Service pricing details"
+      ],
+      "responses": [
+        "Pricing depends on the type of service and equipment involved.",
+        "We provide affordable HVAC repair, maintenance, and installation services.",
+        "You can request a free estimate for installations and replacements.",
+        "Please provide more details so we can give you an accurate quote."
+      ]
+    },
+    {
+      "tag": "service_area",
+      "patterns": [
+        "Which areas do you serve?",
+        "Service locations",
+        "Do you work near me?",
+        "HVAC service area",
+        "Coverage area",
+        "What cities do you cover?"
+      ],
+      "responses": [
+        "We provide HVAC services across multiple residential and commercial areas.",
+        "Please share your city or zip code to confirm service availability.",
+        "Our technicians cover nearby regions for repairs, maintenance, and installations.",
+        "We will check if we have technicians available in your location."
+      ]
+    },
+    {
+      "tag": "appointment_booking",
+      "patterns": [
+        "Book an appointment",
+        "Schedule HVAC service",
+        "Need technician visit",
+        "Can I book AC repair?",
+        "Set up maintenance visit",
+        "Schedule inspection",
+        "I want to book a service"
+      ],
+      "responses": [
+        "Sure! Please provide your preferred date and time.",
+        "We can help schedule your HVAC service appointment.",
+        "Please share your contact details and issue description.",
+        "Our support team will confirm your booking shortly."
+      ]
+    },
+    {
+      "tag": "business_hours",
+      "patterns": [
+        "What are your working hours?",
+        "Business hours",
+        "When are you open?",
+        "Customer support timing",
+        "HVAC office hours",
+        "Are you open today?"
+      ],
+      "responses": [
+        "Our standard business hours are Monday to Saturday from 8 AM to 6 PM.",
+        "Emergency HVAC support may be available outside normal business hours.",
+        "Please contact us for holiday or emergency availability.",
+        "We are happy to assist you during our operating hours."
+      ]
+    },
+    {
+      "tag": "payment_methods",
+      "patterns": [
+        "What payment methods do you accept?",
+        "Can I pay online?",
+        "Do you take cards?",
+        "HVAC payment options",
+        "Accepted payments",
+        "Cash or card payment"
+      ],
+      "responses": [
+        "We accept cash, credit cards, debit cards, and online payments.",
+        "Payment options may vary depending on the service type.",
+        "Please contact support for financing or installment plans.",
+        "Secure digital payments are also available."
+      ]
+    },
+    {
+      "tag": "warranty",
+      "patterns": [
+        "Do you provide warranty?",
+        "HVAC service warranty",
+        "AC installation warranty",
+        "Repair guarantee",
+        "Warranty coverage",
+        "Parts warranty"
+      ],
+      "responses": [
+        "Yes, we provide warranty coverage on selected repairs and installations.",
+        "Warranty terms depend on the equipment manufacturer and service type.",
+        "Please ask our technician for detailed warranty information.",
+        "Customer satisfaction and service quality are our priorities."
+      ]
+    },
+    {
+      "tag": "commercial_hvac",
+      "patterns": [
+        "Commercial HVAC services",
+        "Office AC maintenance",
+        "Industrial cooling system",
+        "Commercial furnace repair",
+        "HVAC for business",
+        "Large building ventilation",
+        "Commercial HVAC installation"
+      ],
+      "responses": [
+        "We provide complete commercial HVAC solutions for offices and businesses.",
+        "Our services include installation, maintenance, repairs, and ventilation systems.",
+        "We work with rooftop units, chillers, furnaces, and large HVAC systems.",
+        "Please contact us for customized commercial HVAC support."
+      ]
+    },
+    {
+      "tag": "heat_pump",
+      "patterns": [
+        "What is a heat pump?",
+        "Heat pump not working",
+        "Heat pump installation",
+        "Heat pump maintenance",
+        "Heat pump efficiency",
+        "Should I buy a heat pump?"
+      ],
+      "responses": [
+        "Heat pumps provide both heating and cooling using energy-efficient technology.",
+        "They are a great option for moderate climates and energy savings.",
+        "Regular maintenance helps improve heat pump performance.",
+        "We provide heat pump installation and repair services."
+      ]
+    },
+    {
+      "tag": "mini_split",
+      "patterns": [
+        "What is a mini split AC?",
+        "Ductless AC system",
+        "Mini split installation",
+        "Mini split not cooling",
+        "Benefits of ductless HVAC",
+        "Mini split maintenance"
+      ],
+      "responses": [
+        "Mini split systems are ductless HVAC units designed for efficient room cooling and heating.",
+        "They are energy-efficient and ideal for homes without ductwork.",
+        "Regular cleaning and maintenance help mini splits perform efficiently.",
+        "We install and service ductless mini-split systems."
+      ]
+    },
+    {
+      "tag": "default",
+      "patterns": [
+        "Random text",
+        "I do not understand",
+        "Can you explain?",
+        "Something else",
+        "Not related",
+        "Help me"
+      ],
+      "responses": [
+        "I am sorry, I did not fully understand your request.",
+        "Could you please provide more details about your HVAC issue?",
+        "I can help with AC repair, heating systems, maintenance, installations, and indoor air quality.",
+        "Please rephrase your question so I can assist you better."
+      ]
+    }
+  ]
+}
